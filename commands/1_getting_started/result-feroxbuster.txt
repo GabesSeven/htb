@@ -1,0 +1,250 @@
+┌─[us-academy-1]─[10.10.15.16]─[htb-ac-1537165@htb-e7muzgt3yh]─[~]
+└──╼ [★]$ curl -s $URL/data/ | html2text
+
+curl -s $URL/backups/ | html2text
+
+curl -s $URL/plugins/ | html2text
+
+curl -s $URL/theme/ | html2text
+****** Index of /data ******
+[[ICO]]       Name             Last modified    Size Description
+===========================================================================
+[[PARENTDIR]] Parent Directory                     -  
+[[DIR]]       cache/           2024-03-12 13:05    -  
+[[DIR]]       other/           2024-03-12 13:05    -  
+[[DIR]]       pages/           2024-03-12 13:05    -  
+[[DIR]]       thumbs/          2018-09-07 17:58    -  
+[[DIR]]       uploads/         2018-09-07 17:58    -  
+[[DIR]]       users/           2024-03-12 13:05    -  
+===========================================================================
+     Apache/2.4.41 (Ubuntu) Server at gettingstarted.htb Port 80
+****** Index of /backups ******
+[[ICO]]       Name             Last modified    Size Description
+===========================================================================
+[[PARENTDIR]] Parent Directory                     -  
+[[DIR]]       other/           2024-03-12 13:05    -  
+[[DIR]]       pages/           2024-03-12 13:05    -  
+[[DIR]]       users/           2024-03-12 13:05    -  
+[[DIR]]       zip/             2024-03-12 13:05    -  
+===========================================================================
+     Apache/2.4.41 (Ubuntu) Server at gettingstarted.htb Port 80
+****** Index of /plugins ******
+[[ICO]]       Name                 Last modified    Size Description
+===========================================================================
+[[PARENTDIR]] Parent Directory                         -  
+[[   ]]       InnovationPlugin.php 2018-09-07 17:58 3.3K  
+[[DIR]]       InnovationPlugin/    2024-03-12 13:05    -  
+[[   ]]       anonymous_data.php   2018-09-07 17:58 9.8K  
+[[DIR]]       anonymous_data/      2024-03-12 13:05    -  
+===========================================================================
+     Apache/2.4.41 (Ubuntu) Server at gettingstarted.htb Port 80
+****** Index of /theme ******
+[[ICO]]       Name             Last modified    Size Description
+===========================================================================
+[[PARENTDIR]] Parent Directory                     -  
+[[DIR]]       Cardinal/        2024-03-12 13:05    -  
+[[DIR]]       Innovation/      2024-03-12 13:05    -  
+===========================================================================
+     Apache/2.4.41 (Ubuntu) Server at gettingstarted.htb Port 80
+┌─[us-academy-1]─[10.10.15.16]─[htb-ac-1537165@htb-e7muzgt3yh]─[~]
+└──╼ [★]$ feroxbuster \
+-u $URL \
+--scan-dir-listings \
+-x php,txt,xml,bak,zip,tar,gz,conf,old \
+-d 3 \
+-t 100
+                                                                                                                                                                                              
+ ___  ___  __   __     __      __         __   ___
+|__  |__  |__) |__) | /  `    /  \ \_/ | |  \ |__
+|    |___ |  \ |  \ | \__,    \__/ / \ | |__/ |___
+by Ben "epi" Risher 🤓                 ver: 2.13.1
+───────────────────────────┬──────────────────────
+ 🎯  Target Url            │ http://gettingstarted.htb/
+ 🚩  In-Scope Url          │ gettingstarted.htb
+ 🚀  Threads               │ 100
+ 📖  Wordlist              │ /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
+ 👌  Status Codes          │ All Status Codes!
+ 💥  Timeout (secs)        │ 7
+ 🦡  User-Agent            │ feroxbuster/2.13.1
+ 💉  Config File           │ /etc/feroxbuster/ferox-config.toml
+ 🔎  Extract Links         │ true
+ 📂  Scan Dir Listings     │ true
+ 💲  Extensions            │ [php, txt, xml, bak, zip, tar, gz, conf, old]
+ 🏁  HTTP methods          │ [GET]
+ 🔃  Recursion Depth       │ 3
+───────────────────────────┴──────────────────────
+ 🏁  Press [ENTER] to use the Scan Management Menu™
+──────────────────────────────────────────────────
+403      GET        9l       28w      283c Auto-filtering found 404-like response and created new filter; toggle off with --dont-filter
+404      GET        9l       31w      280c Auto-filtering found 404-like response and created new filter; toggle off with --dont-filter
+301      GET        9l       28w      324c http://gettingstarted.htb/admin => http://gettingstarted.htb/admin/
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/download.php => index.php?redirect=download.php?
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/pages.php => index.php?redirect=pages.php?
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/archive.php => index.php?redirect=archive.php?
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/support.php => index.php?redirect=support.php?
+301      GET        9l       28w      329c http://gettingstarted.htb/admin/lang => http://gettingstarted.htb/admin/lang/
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/sitemap.php => index.php?redirect=sitemap.php?
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/log.php => index.php?redirect=log.php?
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/image.php => index.php?redirect=image.php?
+200      GET       64l      194w     2731c http://gettingstarted.htb/admin/resetpassword.php
+200      GET       29l       98w      787c http://gettingstarted.htb/admin/template/ie6.css
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/template/error_checking.php
+200      GET        1l     3019w    35426c http://gettingstarted.htb/admin/template/style.php
+500      GET        2l        7w       70c http://gettingstarted.htb/admin/template/sidebar-pages.php
+500      GET        0l        0w        0c http://gettingstarted.htb/admin/template/include-nav.php
+500      GET        2l        6w       63c http://gettingstarted.htb/admin/template/sidebar-backups.php
+500      GET        2l        7w       75c http://gettingstarted.htb/admin/template/sidebar-settings.php
+200      GET       44l       99w      682c http://gettingstarted.htb/admin/template/css-wide.php
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/template/header.php
+200      GET        0l        0w        0c http://gettingstarted.htb/admin/cron.php
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/logout.php => index.php?logout
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/backups.php => index.php?redirect=backups.php?
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/edit.php => index.php?redirect=edit.php?
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/upload.php => index.php?redirect=upload.php?
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/plugins.php => index.php?redirect=plugins.php?
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/theme.php => index.php?redirect=theme.php?
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/components.php => index.php?redirect=components.php?
+200      GET        0l        0w        0c http://gettingstarted.htb/admin/api.php
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/settings.php => index.php?redirect=settings.php?
+301      GET        9l       28w      333c http://gettingstarted.htb/admin/template => http://gettingstarted.htb/admin/template/
+301      GET        9l       28w      328c http://gettingstarted.htb/admin/inc => http://gettingstarted.htb/admin/inc/
+200      GET        0l        0w        0c http://gettingstarted.htb/admin/lang/en_US.php
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/inc/logging.class.php
+500      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/configuration.php
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/inc/template_functions.php
+200      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/security_functions.php
+500      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/ZipArchive.php
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/inc/theme_functions.php
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/inc/plugin_functions.php
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/inc/cookie_functions.php
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/inc/login_functions.php
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/inc/imagemanipulation.php
+200      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/common.php
+200      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/nonce.php
+200      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/xss.php
+500      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/api.plugin.php
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/thumb.php => index.php?redirect=thumb.php?
+200      GET       61l      177w     2623c http://gettingstarted.htb/admin/index.php
+200      GET      608l     1464w    19909c http://gettingstarted.htb/admin/template/js/jquery.getsimple.js
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/navigation.php => index.php?redirect=navigation.php?
+200      GET     2112l     5042w    42249c http://gettingstarted.htb/admin/template/css.php
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/zip.php => index.php?redirect=zip.php?
+200      GET       31l       94w      828c http://gettingstarted.htb/admin/humans.txt
+500      GET        2l        6w       60c http://gettingstarted.htb/admin/template/sidebar-theme.php
+500      GET        2l        6w       64c http://gettingstarted.htb/admin/template/sidebar-support.php
+500      GET        2l        6w       63c http://gettingstarted.htb/admin/template/sidebar-plugins.php
+500      GET        3l        5w       65c http://gettingstarted.htb/admin/template/footer.php
+500      GET        2l        6w       61c http://gettingstarted.htb/admin/template/sidebar-files.php
+200      GET       45l      126w     2294c http://gettingstarted.htb/admin/share.php
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/load.php => index.php?redirect=load.php?
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/inc/basic.php
+200      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/image.class.php
+200      GET       87l      371w     6171c http://gettingstarted.htb/admin/inc/timezone_options.txt
+200      GET        1l        6w       35c http://gettingstarted.htb/admin/inc/caching_functions.php
+200      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/api.class.php
+302      GET        0l        0w        0c http://gettingstarted.htb/admin/inc/ajax.php => index.php?redirect=ajax.php?
+200      GET        4l       11w      292c http://gettingstarted.htb/admin/template/images/utick.png
+200      GET       17l       29w      818c http://gettingstarted.htb/admin/template/images/ajax.gif
+200      GET        1l     3013w    35357c http://gettingstarted.htb/data/cache/stylesheet.txt
+200      GET     1108l      346w   107449c http://gettingstarted.htb/admin/template/images/ajax_dark.gif
+301      GET        9l       28w      326c http://gettingstarted.htb/plugins => http://gettingstarted.htb/plugins/
+301      GET        9l       28w      323c http://gettingstarted.htb/data => http://gettingstarted.htb/data/
+200      GET        4l       13w      275c http://gettingstarted.htb/theme/Innovation/assets/images/break.png
+200      GET      226l      835w     7067c http://gettingstarted.htb/theme/Innovation/assets/css/reset.css
+200      GET        1l        6w       35c http://gettingstarted.htb/theme/Innovation/footer.inc.php
+200      GET        1l        6w       35c http://gettingstarted.htb/theme/Innovation/functions.php
+200      GET      327l      770w     7293c http://gettingstarted.htb/theme/Innovation/style.css
+301      GET        9l       28w      342c http://gettingstarted.htb/theme/Innovation/assets => http://gettingstarted.htb/theme/Innovation/assets/
+200      GET        2l        8w      431c http://gettingstarted.htb/sitemap.xml
+200      GET      152l      504w     5485c http://gettingstarted.htb/index.php
+301      GET        9l       28w      336c http://gettingstarted.htb/admin/template/js => http://gettingstarted.htb/admin/template/js/
+200      GET       32l      227w     4293c http://gettingstarted.htb/admin/template/
+301      GET        9l       28w      340c http://gettingstarted.htb/admin/template/images => http://gettingstarted.htb/admin/template/images/
+200      GET        5l       18w      631c http://gettingstarted.htb/admin/template/images/active.png
+200      GET        7l       22w      943c http://gettingstarted.htb/admin/template/images/capslock.png
+200      GET        5l       12w      263c http://gettingstarted.htb/admin/template/images/minus.png
+200      GET        4l       16w      668c http://gettingstarted.htb/admin/template/images/clock.png
+200      GET        5l       15w      284c http://gettingstarted.htb/admin/template/images/plus.png
+200      GET        2l        4w      221c http://gettingstarted.htb/data/users/admin.xml
+200      GET       27l      164w     2077c http://gettingstarted.htb/data/pages/index.xml
+200      GET       12l       46w      869c http://gettingstarted.htb/data/other/components.xml
+200      GET        2l        4w      225c http://gettingstarted.htb/data/other/website.xml
+200      GET        2l       15w      584c http://gettingstarted.htb/data/other/pages.xml
+200      GET        2l        4w      114c http://gettingstarted.htb/data/other/authorization.xml
+200      GET        2l        4w      251c http://gettingstarted.htb/data/other/plugins.xml
+200      GET        2l       23w      457c http://gettingstarted.htb/data/other/404.xml
+301      GET        9l       28w      326c http://gettingstarted.htb/backups => http://gettingstarted.htb/backups/
+200      GET       13l      107w     7019c http://gettingstarted.htb/theme/Innovation/assets/js/dd_belatedpng.js
+200      GET        7l       27w     1980c http://gettingstarted.htb/theme/Innovation/assets/images/share.png
+200      GET      152l      504w     5485c http://gettingstarted.htb/
+200      GET        1l        6w       35c http://gettingstarted.htb/theme/Innovation/template.php
+200      GET        1l        6w       35c http://gettingstarted.htb/theme/Innovation/header.inc.php
+200      GET        1l        6w       35c http://gettingstarted.htb/theme/Innovation/sidebar.inc.php
+301      GET        9l       28w      332c http://gettingstarted.htb/backups/pages => http://gettingstarted.htb/backups/pages/
+301      GET        9l       28w      332c http://gettingstarted.htb/backups/users => http://gettingstarted.htb/backups/users/
+301      GET        9l       28w      324c http://gettingstarted.htb/theme => http://gettingstarted.htb/theme/
+301      GET        9l       28w      342c http://gettingstarted.htb/theme/Innovation/images => http://gettingstarted.htb/theme/Innovation/images/
+200      GET       23l      131w     2398c http://gettingstarted.htb/theme/Innovation/
+500      GET        0l        0w        0c http://gettingstarted.htb/plugins/anonymous_data.php
+200      GET        1l        8w      109c http://gettingstarted.htb/data/cache/2a4c6447379fba09620ba05582eb61af.txt
+200      GET        1l        6w       35c http://gettingstarted.htb/theme/Cardinal/template.php
+500      GET        0l        0w        0c http://gettingstarted.htb/plugins/InnovationPlugin.php
+301      GET        9l       28w      329c http://gettingstarted.htb/data/pages => http://gettingstarted.htb/data/pages/
+200      GET        2l        4w       32c http://gettingstarted.htb/robots.txt
+301      GET        9l       28w      330c http://gettingstarted.htb/backups/zip => http://gettingstarted.htb/backups/zip/
+301      GET        9l       28w      332c http://gettingstarted.htb/backups/other => http://gettingstarted.htb/backups/other/
+301      GET        9l       28w      332c http://gettingstarted.htb/admin/inc/tmp => http://gettingstarted.htb/admin/inc/tmp/
+301      GET        9l       28w      331c http://gettingstarted.htb/data/uploads => http://gettingstarted.htb/data/uploads/
+301      GET        9l       28w      329c http://gettingstarted.htb/data/cache => http://gettingstarted.htb/data/cache/
+301      GET        9l       28w      329c http://gettingstarted.htb/data/users => http://gettingstarted.htb/data/users/
+301      GET        9l       28w      341c http://gettingstarted.htb/plugins/anonymous_data => http://gettingstarted.htb/plugins/anonymous_data/
+200      GET       21l      115w     1901c http://gettingstarted.htb/data/
+301      GET        9l       28w      329c http://gettingstarted.htb/data/other => http://gettingstarted.htb/data/other/
+301      GET        9l       28w      346c http://gettingstarted.htb/plugins/anonymous_data/lang => http://gettingstarted.htb/plugins/anonymous_data/lang/
+301      GET        9l       28w      330c http://gettingstarted.htb/data/thumbs => http://gettingstarted.htb/data/thumbs/
+301      GET        9l       28w      334c http://gettingstarted.htb/data/other/logs => http://gettingstarted.htb/data/other/logs/
+200      GET        0l        0w        0c http://gettingstarted.htb/data/uploads/index.php
+301      GET        9l       28w      348c http://gettingstarted.htb/plugins/InnovationPlugin/lang => http://gettingstarted.htb/plugins/InnovationPlugin/lang/
+404      GET        0l        0w      280c http://gettingstarted.htb/admin/lang/webman
+[####################] - 4m   1202900/1202900 0s      found:129     errors:649879 
+[####################] - 3m    300000/300000  1442/s  http://gettingstarted.htb/ 
+[####################] - 3m    300000/300000  1597/s  http://gettingstarted.htb/admin/ 
+[####################] - 3m    300000/300000  1446/s  http://gettingstarted.htb/admin/inc/ 
+[####################] - 3m    300000/300000  1458/s  http://gettingstarted.htb/admin/lang/ 
+[####################] - 3m    300000/300000  1474/s  http://gettingstarted.htb/admin/template/ 
+[####################] - 3m    300000/300000  1471/s  http://gettingstarted.htb/data/ 
+[####################] - 4m    300000/300000  1429/s  http://gettingstarted.htb/data/thumbs/ 
+[####################] - 3m    300000/300000  1472/s  http://gettingstarted.htb/data/uploads/ 
+[####################] - 3m    300000/300000  1468/s  http://gettingstarted.htb/plugins/ 
+[####################] - 3m    300000/300000  1525/s  http://gettingstarted.htb/theme/Innovation/ 
+[####################] - 3m    300000/300000  1480/s  http://gettingstarted.htb/data/cache/ 
+[####################] - 3m    300000/300000  1484/s  http://gettingstarted.htb/data/other/ 
+[####################] - 3m    300000/300000  1472/s  http://gettingstarted.htb/data/users/ 
+[####################] - 3m    300000/300000  1477/s  http://gettingstarted.htb/data/pages/ 
+[####################] - 3m    300000/300000  1525/s  http://gettingstarted.htb/backups/ 
+[####################] - 3m    300000/300000  1496/s  http://gettingstarted.htb/backups/users/ 
+[####################] - 3m    300000/300000  1432/s  http://gettingstarted.htb/theme/ 
+[####################] - 3m    300000/300000  1500/s  http://gettingstarted.htb/backups/pages/ 
+[####################] - 3m    300000/300000  1443/s  http://gettingstarted.htb/plugins/InnovationPlugin/ 
+[####################] - 3m    300000/300000  1483/s  http://gettingstarted.htb/plugins/anonymous_data/ 
+[####################] - 3m    300000/300000  1455/s  http://gettingstarted.htb/backups/other/ 
+[####################] - 3m    300000/300000  1488/s  http://gettingstarted.htb/backups/zip/ 
+[####################] - 3m    300000/300000  1449/s  http://gettingstarted.htb/theme/Cardinal/                                                                                               ┌─[us-academy-1]─[10.10.15.16]─[htb-ac-1537165@htb-e7muzgt3yh]─[~]
+└──╼ [★]$ searchsploit getsimple anonymous_data
+
+searchsploit InnovationPlugin
+
+searchsploit getsimple plugin
+Exploits: No Results
+Shellcodes: No Results
+Exploits: No Results
+Shellcodes: No Results
+------------------------------------------------------------------------------------------------------------------------------------------------------------ ---------------------------------
+ Exploit Title                                                                                                                                              |  Path
+------------------------------------------------------------------------------------------------------------------------------------------------------------ ---------------------------------
+Getsimple CMS Items Manager Plugin - 'PHP.php' Arbitrary File Upload                                                                                        | php/webapps/37472.php
+GetSimple CMS My SMTP Contact Plugin 1.1.1 - Cross-Site Request Forgery                                                                                     | php/webapps/49774.py
+GetSimple CMS My SMTP Contact Plugin 1.1.2 - Persistent Cross-Site Scripting                                                                                | php/webapps/49798.py
+GetSimple CMS Plugin Multi User 1.8.2 - Cross-Site Request Forgery (Add Admin)                                                                              | php/webapps/48745.txt
+------------------------------------------------------------------------------------------------------------------------------------------------------------ ---------------------------------
+Shellcodes: No Results
