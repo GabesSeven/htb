@@ -18,6 +18,28 @@
 # Reconstruir a infraestrutura de uma empresa apenas através do DNS.
 ###############################################################################
 
+################################################################################
+# REFERÊNCIAS DA AULA
+################################################################################
+#
+# ISC BIND
+# https://www.isc.org/bind/
+#
+# Debian BIND9
+# https://wiki.debian.org/BIND9
+#
+# CVEs BIND
+# https://www.cvedetails.com/product/144/ISC-Bind.html?vendor_id=64
+#
+# DNS Attacks
+# https://securitytrails.com/blog/most-popular-types-dns-attacks
+#
+# SecLists
+# https://github.com/danielmiessler/SecLists
+#
+# DNSenum
+# https://github.com/fwaeytens/dnsenum
+
 ###############################################################################
 # COMO UM PENTESTER PENSA
 ###############################################################################
